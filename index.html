@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nicoalas</title>
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Add some basic styling to our calculator */
+      .calculator {
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      .calculator input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+      .calculator button[type="button"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #4c93af;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+      .calculator button[type="button"]:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Churrascaría</a>
+            </li>
+            <li>
+                <a href="project.html">Sobre mim</a>
+            </li>
+            <li>
+                <a href="contact.html">Contatos</a>
+            </li>
+        </ul>
+    </nav>
+
+    <header>
+        <div class="center">
+            <img src="./img/Nicolas2.png"></img>
+        </div>
+        <h1>Churrascaría</h1>
+
+        <div class="calculator">
+            <h2>Calculadora de Consumo de Alimentos e Bebidas</h2>
+            <label for="homens">Homens:</label>
+            <input type="number" id="homens" value="0">
+            <label for="mulheres">Mulheres:</label>
+            <input type="number" id="mulheres" value="0">
+            <label for="criancas">Crianças:</label>
+            <input type="number" id="criancas" value="0">
+            <button type="button" onclick="calculateConsumption()">Calcular</button>
+            <p id="result"></p>
+        </div>
+
+    </header>
+
+    <script>
+        function calculateConsumption() {
+            const homens = document.getElementById("homens").value;
+            const mulheres = document.getElementById("mulheres").value;
+            const criancas = document.getElementById("criancas").value;
+
+            let carneBovina = (homens * 500) + (mulheres * 300) + (criancas * 200);
+            let frango = (homens * 200) + (mulheres * 200) + (criancas * 100);
+            let linguiça = (homens * 200) + (mulheres * 200) + (criancas * 200);
+            let refrigerante = (homens * 300) + (mulheres * 400) + (criancas * 200);
+            let cerveja = (homens * 800) + (mulheres * 500);
+
+            document.getElementById("result").innerHTML = `
+                <p>Carne Bovina: ${carneBovina}g</p>
+                <p>Frango: ${frango}g</p>
+                <p>Linguiça: ${linguiça}g</p>
+                <p>Refrigerante: ${refrigerante}ml</p>
+                <p>Cerveja: ${cerveja}ml</p>
+            `;
+        }
+    </script>
+
+    <div id="contact">
+        <h2>Contatos</h2>
+        <div itemscope itemtype="https://schema.org/LocalBusiness">
+            <h1 itemprop="name">Nome da Churrascaria</h1>
+            <p>Endereço: Rua Arlindo Tavares, 52</p>
+            <p>Curitiba, Paraná, </p>
+            <p>Telefone: 41984689460 <span itemprop="telephone"><a href="tel:+123456789">(12) 3456-7890</a></span></p>
+        </div>
+    </div>
+
+</body>
+</html>
+
+        
+        
+
+   
